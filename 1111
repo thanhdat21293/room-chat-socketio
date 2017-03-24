@@ -1,0 +1,31 @@
+class Room {
+    constructor(idUser, idRoom, nameRoom){
+        this.idUser = idUser;
+        this.idRoom = idRoom;
+        this.nameRoom = nameRoom;
+        this.infoRoom = [];
+        this.allRooms = [];
+    }
+    addRoom() {
+        this.infoRoom[this.idRoom] = {
+            'idRoom' : this.idRoom,
+            'nameRoom' : this.nameRoom,
+            'idUser' : this.idUser,
+            'clients' : [this.idUser]
+        };
+        this.allRooms.push(this.idRoom);
+        return this.infoRoom;
+    }
+
+    getallRooms() {
+        return this.allRooms;
+    }
+    getIdUser() {
+        return this.idUser;
+    }
+    getIdRoom() {
+        return this.idRoom;
+    }
+}
+
+module.exports = Room;
